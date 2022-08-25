@@ -48,12 +48,12 @@ def main():
 
 
     with (open("vars.tf", "w")) as f:
-        f.write("variable \"test\" { \ndefault = {")
+        f.write("variable \"test\" { \n  default = {")
 
     with open('vars.tf', 'a') as f:
         for i in data:
-            f.write('\n {} = '.format(i['name']))
-            json.dump(i, f, indent=4, separators=[",", " = "])
+            f.write('\n    {} = '.format(i['name']))
+            json.dump(i, f, indent=6, separators=[",", " = "])
         f.write('\n}\n}')
 
 if __name__ == '__main__':
