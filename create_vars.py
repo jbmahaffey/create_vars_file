@@ -46,11 +46,15 @@ def main():
                 devices.append(line)
         data = devices
 
-    with (open("data.json", "w")) as f:
-        f.write("default = ")
 
-    with open('data.json', 'a') as f:
-        json.dump(data, f, indent=2, separators=[",", " = "])
+    with (open("vars.tf", "w")) as f:
+        f.write("variable \"test\" { \ndefault = {\n")
+
+    with open('vars.tf', 'a') as f:
+        for i in data:
+            f.write('\n {} = '.format(i['name']))
+            json.dump(data[0], f, indent=2, separators=[",", " = "])
+        f.write('\n}\n}')
 
 if __name__ == '__main__':
    main()
