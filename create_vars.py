@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from email.policy import default
 import sys
 import os
 import csv
