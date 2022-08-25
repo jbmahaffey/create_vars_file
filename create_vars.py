@@ -30,21 +30,12 @@ def main():
         logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',filename='address.log', level=formattedlevel, datefmt='%Y-%m-%d %H:%M:%S')
     else:
         ()
-    
-    # Open variable file either csv or yaml
-    filetype = args.devlist.split('.')
-    
-    if filetype[1] == 'yml':
-        # Open YAML variable file
-        with open(os.path.join(sys.path[0],args.devlist), 'r') as vars_:
-            data = yaml.safe_load(vars_)
-    
-    elif filetype[1] == 'csv':
-        devices = []
-        with open(os.path.join(sys.path[0],args.devlist), 'r') as vars_:
-            for line in csv.DictReader(vars_):
-                devices.append(line)
-        data = devices
+
+    devices = []
+    with open(os.path.join(sys.path[0],args.devlist), 'r') as vars_:
+        for line in csv.DictReader(vars_):
+            devices.append(line)
+    data = devices
 
 
     with (open("vars.tf", "w")) as f:
