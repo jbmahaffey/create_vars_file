@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from email.policy import default
 import sys
 import os
 import requests
@@ -43,10 +44,13 @@ def main():
         with open(os.path.join(sys.path[0],args.devlist), 'r') as vars_:
             for line in csv.DictReader(vars_):
                 devices.append(line)
-        data = {'default': devices}
+        data = devices
 
-    with open('data.json', 'w') as f:
-        json.dump(data, f)
+    with (open("data.json", "w")) as f:
+        f.write("default = ")
+
+    with open('data.json', 'a') as f:
+        json.dump(data, f, indent=2, separators=[",", " = "])
 
 if __name__ == '__main__':
    main()
