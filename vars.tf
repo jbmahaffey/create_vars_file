@@ -6,7 +6,7 @@ default = {
     "subnet" = "1.1.1.0",
     "mask" = "255.255.255.0",
     "fqdn" = "",
-    "allow-routing" = "false"
+    "allow_routing" = "false"
 }
  test2 = {
     "name" = "test2",
@@ -14,23 +14,23 @@ default = {
     "subnet" = "2.2.2.0",
     "mask" = "255.255.255.0",
     "fqdn" = "",
-    "allow-routing" = "false"
+    "allow_routing" = "false"
 }
  test3 = {
     "name" = "test3",
     "type" = "ipmask",
     "subnet" = "3.3.3.3",
     "mask" = "255.255.255.255",
-    "fqdn" = "false",
-    "allow-routing" = null
+    "fqdn" = "",
+    "allow_routing" = "false"
 }
  msn = {
     "name" = "msn",
     "type" = "fqdn",
     "subnet" = "",
-    "mask" = "msn.com",
-    "fqdn" = "false",
-    "allow-routing" = null
+    "mask" = "",
+    "fqdn" = "msn.com",
+    "allow_routing" = "false"
 }
 }
 }
