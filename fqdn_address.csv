@@ -1,0 +1,3 @@
+name,type,fqdn,allow_routing
+msn,fqdn,msn.com,false
+hbo,fqdn,hbo.com,false

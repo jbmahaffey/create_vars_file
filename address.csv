@@ -1,5 +1,0 @@
-name,type,subnet,mask,fqdn,allow_routing
-test1,ipmask,1.1.1.0,255.255.255.0,,false
-test2,ipmask,2.2.2.0,255.255.255.0,,false
-test3,ipmask,3.3.3.3,255.255.255.255,,false
-msn,fqdn,,,msn.com,false
